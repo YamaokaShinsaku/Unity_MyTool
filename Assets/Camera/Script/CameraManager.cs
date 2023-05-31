@@ -17,14 +17,13 @@ public class CameraManager : MonoBehaviour
     [SerializeField]
     private new Camera camera;
     // カメラ操作にマウスを使用するかどうか
-    [SerializeField]
-    private bool mouseMode = false;
+    public bool mouseMode = false;
     // マウスの移動スピード
     [SerializeField]
     private float mouseSpeed = 10.0f;
 
     [SerializeField]
-    public Parameter parameter;
+    private Parameter parameter;
 
     public Parameter Param => parameter;
 

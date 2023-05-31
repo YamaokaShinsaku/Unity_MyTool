@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 1066131731}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -486,6 +486,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 4804171068165014013, guid: 61ab1f2e3a4214749aa91022ecde7c0e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4804171068279787094, guid: 61ab1f2e3a4214749aa91022ecde7c0e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -493,6 +497,14 @@ PrefabInstance:
     - target: {fileID: 4804171068871743081, guid: 61ab1f2e3a4214749aa91022ecde7c0e, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804171069142803423, guid: 61ab1f2e3a4214749aa91022ecde7c0e, type: 3}
+      propertyPath: upKey
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804171069142803423, guid: 61ab1f2e3a4214749aa91022ecde7c0e, type: 3}
+      propertyPath: accelKey
+      value: 273
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61ab1f2e3a4214749aa91022ecde7c0e, type: 3}

@@ -75,12 +75,22 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(dashVec * 100.0f, ForceMode.Impulse);
         }
 
-        // 前方向に突進する処理
+        // 上方向に上昇する処理
         upVec = upDirectionObj.position - this.transform.position;
         upVec.Normalize();
         if (Input.GetKeyDown(KeyCode.Q))
         {
             rb.AddForce(upVec * 10.0f, ForceMode.Impulse);
+        }
+
+        // Spaceキーを押している間、落下速度を落とす
+        if(Input.GetKey(KeyCode.F))
+        {
+            rb.drag = 5.0f;
+        }
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+            rb.drag = 0.0f;
         }
     }
 

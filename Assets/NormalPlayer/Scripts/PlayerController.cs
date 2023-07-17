@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private Transform dashDirectionObj;
+    [SerializeField]
+    private Transform upDirectionObj;
 
     [SerializeField]
     private Vector3 moveDirection;      // ˆÚ“®•ûŒü
@@ -41,6 +43,7 @@ public class PlayerController : MonoBehaviour
     private GroundCheck groundCheck;
 
     Vector3 dashVec;
+    Vector3 upVec;
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +73,14 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             rb.AddForce(dashVec * 100.0f, ForceMode.Impulse);
+        }
+
+        // ‘O•ûŒü‚É“Ëi‚·‚éˆ—
+        upVec = upDirectionObj.position - this.transform.position;
+        upVec.Normalize();
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            rb.AddForce(upVec * 10.0f, ForceMode.Impulse);
         }
     }
 

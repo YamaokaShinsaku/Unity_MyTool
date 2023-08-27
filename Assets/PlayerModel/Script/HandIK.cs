@@ -5,11 +5,14 @@ using UnityEngine;
 public class HandIK : MonoBehaviour
 {
     // IK制御を行う体の部分
-    private AvatarIKGoal ikGoal = AvatarIKGoal.RightHand;
-
+    private AvatarIKGoal ikRightGoal = AvatarIKGoal.RightHand;
+    private AvatarIKGoal ikLeftGoal = AvatarIKGoal.LeftHand;
     // 右手を置くポイント
     [SerializeField]
     private Transform rightHandPoint;
+    // 左手を置くポイント
+    [SerializeField]
+    private Transform leftHandPoint;
     private Animator anim;
     // IK制御有効化フラグ
     public bool isEnableIK = true;
@@ -32,10 +35,14 @@ public class HandIK : MonoBehaviour
         }
 
         // 銃に作成したPointに右手を移動させる
-        anim.SetIKPositionWeight(ikGoal, 1.0f);
-        anim.SetIKRotationWeight(ikGoal, 1.0f);
-        anim.SetIKPosition(ikGoal, rightHandPoint.position);
-        anim.SetIKRotation(ikGoal, rightHandPoint.rotation);
+        anim.SetIKPositionWeight(ikRightGoal, 1.0f);
+        anim.SetIKPositionWeight(ikRightGoal, 1.0f);
+        anim.SetIKRotationWeight(ikLeftGoal, 1.0f);
+        anim.SetIKRotationWeight(ikLeftGoal, 1.0f);
+        anim.SetIKPosition(ikRightGoal, rightHandPoint.position);
+        anim.SetIKRotation(ikRightGoal, rightHandPoint.rotation);
+        anim.SetIKPosition(ikLeftGoal, leftHandPoint.position);
+        anim.SetIKRotation(ikLeftGoal, leftHandPoint.rotation);
     }
 
 }
